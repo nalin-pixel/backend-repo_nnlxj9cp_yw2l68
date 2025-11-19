@@ -13,10 +13,11 @@ from schemas import (
 
 app = FastAPI()
 
+# CORS: we don't use cookies, so credentials can be False. This allows wildcard origins safely.
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
-    allow_credentials=True,
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
